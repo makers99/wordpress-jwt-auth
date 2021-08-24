@@ -245,7 +245,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 500,
 	"code": "jwt_auth_bad_config",
 	"message": "JWT is not configured properly.",
 	"data": []
@@ -257,7 +257,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_no_auth_header",
 	"message": "Authorization header not found.",
 	"data": []
@@ -269,7 +269,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_bad_iss",
 	"message": "The iss do not match with this server.",
 	"data": []
@@ -281,19 +281,19 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_invalid_token",
 	"message": "Signature verification failed",
 	"data": []
 }
 ```
 
-**Bad Request**
+**Incomplete Payload**
 
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_bad_request",
 	"message": "User ID not found in the token.",
 	"data": []
@@ -305,7 +305,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_user_not_found",
 	"message": "User doesn't exist",
 	"data": []
@@ -317,7 +317,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_invalid_token",
 	"message": "Expired token",
 	"data": []
@@ -329,7 +329,7 @@ If the token is invalid an error will be returned. Here are some samples of erro
 ```json
 {
 	"success": false,
-	"statusCode": 403,
+	"statusCode": 401,
 	"code": "jwt_auth_obsolete_token",
 	"message": "Token is obsolete",
 	"data": []
